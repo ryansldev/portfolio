@@ -1,29 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import { copy, getLocale } from "./i18n";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+export const instant = false;
+
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
+    title: "Ryan Lima | Full Stack, Front-end Specialist",
+    description: copy[locale].description,
+  };
+}
 
-export const metadata: Metadata = {
-  title: "Ryan Lima | Software Engineer",
-  description: "Ryan Lima is a software engineer with a passion for building web applications that are both functional and aesthetically pleasing.",
-};
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const locale = await getLocale();
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang={locale === "pt" ? "pt-BR" : "en"}
+      className={`${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">{children}</body>
     </html>
   );
 }
