@@ -1,8 +1,7 @@
 "use client";
 
-import { useTransition } from "react";
-import { setLocale } from "../app/set-locale";
-import type { Locale } from "../app/i18n";
+import Link from "next/link";
+import { languageTag, localeCookie, type Locale } from "../app/locales";
 
 const options: { locale: Locale; label: string; name: string }[] = [
   { locale: "pt", label: "PT", name: "Português" },
@@ -10,31 +9,30 @@ const options: { locale: Locale; label: string; name: string }[] = [
 ];
 
 export function LanguageToggle({ locale }: { locale: Locale }) {
-  const [pending, startTransition] = useTransition();
-
   return (
-    <div className="flex items-center gap-4 text-sm">
+    <nav className="flex items-center gap-4 text-sm">
       {options.map((option) => {
         const active = option.locale === locale;
         return (
-          <button
+          <Link
             key={option.locale}
-            type="button"
-            aria-pressed={active}
+            href={`/${option.locale}`}
+            hrefLang={languageTag[option.locale]}
+            lang={languageTag[option.locale]}
             aria-label={option.name}
-            disabled={pending}
+            aria-current={active ? "page" : undefined}
             onClick={() => {
-              if (active) return;
-              startTransition(() => setLocale(option.locale));
+              // Remembered by proxy.ts when the visitor comes back to "/".
+              document.cookie = `${localeCookie}=${option.locale}; path=/; max-age=31536000; samesite=lax`;
             }}
-            className={`cursor-pointer leading-none font-medium text-(--content) underline-offset-4 ${
+            className={`leading-none font-medium text-(--content) underline-offset-4 ${
               active ? "underline" : "font-light text-(--content-2)"
-            } disabled:opacity-60`}
+            }`}
           >
             {option.label}
-          </button>
+          </Link>
         );
       })}
-    </div>
+    </nav>
   );
 }

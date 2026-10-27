@@ -1,16 +1,22 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
-import { LanguageToggle } from "../components/language-toggle";
-import { copy, getLocale } from "./i18n";
+import { notFound } from "next/navigation";
+import { LanguageToggle } from "../../components/language-toggle";
+import { copy, hasLocale, languageTag, links, siteUrl, type Locale } from "../i18n";
 
-export const instant = false;
-
-export default async function Home() {
-  const locale = await getLocale();
+export default async function Home({ params }: PageProps<"/[locale]">) {
+  const { locale } = await params;
+  if (!hasLocale(locale)) notFound();
   const text = copy[locale];
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(profileJsonLd(locale)).replace(/</g, "\\u003c"),
+        }}
+      />
       <header className="flex items-center justify-between px-10 py-6 max-md:px-4">
         <p className="text-sm leading-none font-medium text-(--content)">Ryan Lima</p>
         <LanguageToggle locale={locale} />
@@ -21,7 +27,7 @@ export default async function Home() {
           <div className="grid size-[136px] shrink-0 place-items-center rounded-full border border-(--line) max-md:size-20">
             <Image
               src="/images/profile.jpeg"
-              alt="Ryan Lima"
+              alt={text.photoAlt}
               width={400}
               height={400}
               priority
@@ -144,6 +150,42 @@ export default async function Home() {
       </footer>
     </>
   );
+}
+
+function profileJsonLd(locale: Locale) {
+  const text = copy[locale];
+  const url = `${siteUrl}/${locale}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": url,
+    url,
+    name: text.title,
+    description: text.description,
+    inLanguage: languageTag[locale],
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Ryan Lima",
+      alternateName: "ryansldev",
+      jobTitle: text.jobTitle,
+      description: text.bio,
+      image: `${siteUrl}/images/profile.jpeg`,
+      url: siteUrl,
+      email: links.email.href,
+      sameAs: [links.linkedin.href, links.github.href],
+      worksFor: { "@type": "Organization", name: "Solarz" },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Campina Grande",
+        addressRegion: "PB",
+        addressCountry: "BR",
+      },
+      knowsLanguage: ["pt-BR", "en"],
+      knowsAbout: ["React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Front-end", "Full Stack"],
+    },
+  };
 }
 
 function Section({
