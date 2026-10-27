@@ -2,7 +2,7 @@ export const locales = ["en", "pt"] as const;
 
 export type Locale = (typeof locales)[number];
 
-export const siteUrl = "https://ryansldev.com.br";
+export const siteUrl = "https://www.ryansldev.com.br";
 
 export const localeCookie = "locale";
 

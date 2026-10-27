@@ -16,6 +16,10 @@ export default async function OpengraphImage({ params }: { params: Promise<{ loc
   const photo = await readFile(join(process.cwd(), "public/images/profile.jpeg"));
   const photoSrc = `data:image/jpeg;base64,${photo.toString("base64")}`;
 
+  // Previews are shown at under half size, so the role's stack list gets its own line
+  // and every line stays large enough to read once scaled down.
+  const [, headline = text.role, stack] = text.role.match(/^(.*?)\s*\((.*)\)$/) ?? [];
+
   return new ImageResponse(
     (
       <div
@@ -24,8 +28,8 @@ export default async function OpengraphImage({ params }: { params: Promise<{ loc
           height: "100%",
           display: "flex",
           alignItems: "center",
-          gap: 64,
-          padding: "0 96px",
+          gap: 56,
+          padding: "0 72px",
           background: "#111316",
           color: "#ffffff",
         }}
@@ -33,14 +37,21 @@ export default async function OpengraphImage({ params }: { params: Promise<{ loc
         <img
           src={photoSrc}
           alt=""
-          width={280}
-          height={280}
-          style={{ borderRadius: 9999, border: "4px solid #424345" }}
+          width={320}
+          height={320}
+          style={{ borderRadius: 9999, border: "6px solid #424345" }}
         />
-        <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 660 }}>
-          <div style={{ fontSize: 72, fontWeight: 500, lineHeight: 1.1 }}>Ryan Lima</div>
-          <div style={{ fontSize: 32, color: "#d4d4d4", lineHeight: 1.4 }}>{text.role}</div>
-          <div style={{ fontSize: 26, color: "#d4d4d4", lineHeight: 1.4 }}>ryansldev.com.br</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 680 }}>
+          <div style={{ fontSize: 96, fontWeight: 500, lineHeight: 1.05 }}>Ryan Lima</div>
+          <div style={{ display: "flex", flexDirection: "column", fontSize: 44, lineHeight: 1.25 }}>
+            {headline.split(" · ").map((part) => (
+              <div key={part}>{part}</div>
+            ))}
+          </div>
+          {stack && (
+            <div style={{ fontSize: 36, color: "#d4d4d4", lineHeight: 1.3 }}>{stack}</div>
+          )}
+          <div style={{ marginTop: 12, fontSize: 34, color: "#d4d4d4" }}>ryansldev.com.br</div>
         </div>
       </div>
     ),
