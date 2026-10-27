@@ -14,7 +14,7 @@ const poppins = Poppins({
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   return {
-    title: "Ryan Lima | Full Stack, Front-end Specialist",
+    title: copy[locale].title,
     description: copy[locale].description,
   };
 }

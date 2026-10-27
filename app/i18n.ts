@@ -24,175 +24,176 @@ function localeFromAcceptLanguage(header: string): Locale {
   return "en";
 }
 
+const links = {
+  linkedin: {
+    value: "linkedin.com/in/ryansldev",
+    href: "https://linkedin.com/in/ryansldev",
+  },
+  github: {
+    value: "github.com/ryansldev",
+    href: "https://github.com/ryansldev",
+  },
+  email: {
+    value: "ryanlima1309@gmail.com",
+    href: "mailto:ryanlima1309@gmail.com",
+  },
+  phone: {
+    value: "+55 (83) 98896-8267",
+    href: "tel:+5583988968267",
+  },
+} as const;
+
 export const copy = {
   en: {
+    title: "Ryan Lima | Software Engineer, Front-end & Full Stack (React, Next.js, Node.js)",
     description:
-      "Full-stack developer and front-end specialist in React, Node.js, and TypeScript, with 4+ years of experience. Campina Grande, Brazil.",
-    role: "Full Stack, Front-end Specialist",
-    bio: "Full-stack developer focused on the front end, working with React, Node.js, and TypeScript. Over four years, I have helped build and evolve products used by hundreds of companies, from the first design through production and monitoring, with an eye on code quality, user experience, and business results.",
+      "Software Engineer with 4+ years of experience in React, Next.js, Node.js, and TypeScript. Building a CRM used by 7,000+ active users. Based in Brazil, open to remote work.",
+    role: "Software Engineer · Front-end & Full Stack (React, Next.js, Node.js, TypeScript)",
+    availability: "Brazil (UTC−3) · Open to remote roles",
+    bio: "Front-end-focused full stack Software Engineer with 4+ years of experience building web applications with React, Next.js, TypeScript, JavaScript, and Node.js. At Solarz, I build features for a CRM used by more than 7,000 active users in the solar industry, including the analytics module that leadership uses in client consulting. I work best where product and engineering meet: design systems, end-to-end testing, and features that move business metrics.",
     experience: "Experience",
-    skills: "Skills",
+    education: "Education",
+    projects: "Projects",
+    certifications: "Certifications",
+    languages: "Languages",
     contact: "Contact",
     jobs: [
       {
-        period: "2025 – now",
+        period: "Feb 2025 – Present",
         role: "Frontend Developer",
-        company: "Solarz",
+        company: "Solarz · CRM for solar integrators",
+        stack:
+          "Stack: React, Next.js, TypeScript, JavaScript, HTML, CSS, React Query, Zustand, Tailwind CSS, Radix UI, shadcn/ui, Storybook, React Hook Form, Zod, Recharts, Playwright, Vitest, React Testing Library, REST APIs, Git, and Docker.",
         points: [
-          "Helped evolve a CRM used by hundreds of solar integrators, focused on scale and the product’s critical workflows.",
-          "Contributed to the design system, cutting development time by 50% and rework by 80%.",
-          "Built reusable components for strategic CRM modules, reducing duplicated code by about 60% and speeding up new releases.",
-          "Optimized critical React flows and renders, reducing average screen load time by up to 40%.",
-          "Ran regular code reviews to keep quality, consistency, and performance high.",
-          "Wrote and maintained unit and integration tests with Jest, Vitest, and React Testing Library.",
+          "Rebuilt Insights, the analytics module of a CRM with 7,000+ active users that the CEO uses in client consulting, by shipping 13 redesigned data visualization charts (Recharts) with filters, exports, and permission rules behind a feature flag for a gradual rollout.",
+          "Protected the product’s most commercially valuable flows by writing 14 of the 18 Playwright end-to-end test suites (about 78%), covering Insights filters, periods, exports, permissions, and mobile, plus data-field management and proposal building.",
+          "Helped cut development time by 50% and rework by 80%, according to an internal survey of developers and designers, by contributing 45+ components to Estrela UI, the in-house design system built with Storybook, Tailwind CSS, and Radix/shadcn.",
+          "Helped optimize the performance of data-heavy screens such as the deals Kanban for 7,000+ active users by applying React Query caching, lazy loading, list virtualization, and memoization, and made key flows responsive across mobile and desktop.",
+          "Reduced bugs and rework across a codebase shared by 20+ contributors through code review of pull requests against strict component and code standards.",
         ],
       },
       {
-        period: "2022 – now",
-        role: "Software Engineer",
+        period: "Apr 2022 – Present",
+        role: "Full Stack Software Engineer",
         company: "Freelance",
+        stack:
+          "Stack: Node.js, TypeScript, Express, Fastify, REST APIs, Next.js, React, Ant Design, Oracle Database, SQL, Jest, and Telegram Bot API (Telegraf).",
         points: [
-          "Built order-management bots for an automotive company, increasing delivery productivity by 30% and raising operational capacity.",
-          "Designed an HR update dispatch that saved about two weeks of work in a single click.",
-          "Beyond the bots, built a system to release orders, request supplier quotes, and unify those processes, so the team could be trained with less friction.",
-          "Built an online ordering platform for a food business that raised profit margin by 10% by removing marketplace fees.",
-          "Contributed to an internal online voting system, encrypted end to end, completed with full transparency and no data leaks.",
+          "Gave field sales reps on-demand customer reports and product recommendations in chat by building Telegram bots (Node.js, TypeScript, Telegraf) on top of an automotive distributor’s Oracle database, with stock, recent-purchase, and return data per product, order cutting, and PDF reports with detailed tables.",
+          "Replaced a slow, costly legacy system run by a third-party vendor by building an in-house platform (Next.js, React, Ant Design, Express, Oracle) for order release and supplier quotes, with a single sign-on portal and per-employee permissions for the company’s internal tools.",
+          "Saved about two weeks of manual HR work by automating employee data updates in Oracle that used to be done one by one, feeding a report generated automatically by another internal tool.",
+          "Built the front end of a secure online voting system for a labor union as part of a three-developer team, delivering an election with no reported data leaks.",
         ],
       },
     ],
-    skillGroups: [
+    projectList: [
       {
-        label: "AI & data",
-        items:
-          "RAG, LLM integration (GPT-4, Claude), embeddings, document chunking, semantic search, and prompt engineering.",
+        name: "Fila Saúde",
+        links: [
+          { label: "filasaude.com.br", href: "https://filasaude.com.br" },
+          { label: "GitHub", href: "https://github.com/ryansldev/fila-saude" },
+        ],
+        summary:
+          "Open-source app that lets patients join a public health clinic queue from their phone, run a pre-triage that routes them to the right unit, and follow their position live, so they only leave home when it is their turn. Live in production, with 9 GitHub stars.",
+        stack:
+          "TypeScript, Turborepo monorepo, Node.js, Fastify, Drizzle ORM, PostgreSQL, Next.js, Tailwind CSS, shared Zod schemas, Vitest integration tests, and Docker.",
       },
       {
-        label: "Languages",
-        items:
-          "TypeScript, JavaScript, Node.js (NestJS and Express), Java, Spring Boot, React, React Native, Next.js, Prisma ORM, and tRPC.",
+        name: "Kiwi",
+        links: [{ label: "GitHub", href: "https://github.com/ryansldev/kiwi" }],
+        summary:
+          "Open-source personal finance app. A monorepo where the API, web, and mobile apps share one design-token package.",
+        stack:
+          "TypeScript, Bun, Elysia, Better Auth, Drizzle ORM, PostgreSQL, Next.js 16, React 19, Tailwind CSS 4, shadcn/ui, and React Native (Expo).",
       },
-      {
-        label: "Data",
-        items:
-          "PostgreSQL, MongoDB, Redis, Elasticsearch, Kafka, GraphQL, REST, and WebSockets.",
-      },
-      {
-        label: "Cloud",
-        items:
-          "AWS (Lambda, ECS, S3, RDS, CloudWatch), Docker, Kubernetes, Terraform, CI/CD (GitHub Actions, Vercel), and observability (OpenTelemetry, ELK).",
-      },
-      {
-        label: "Practice",
-        items:
-          "Jest, Vitest, React Testing Library, TDD, Agile/Scrum, microservices, SEO, SSR, SSG, Clean Architecture, and event-driven architecture.",
-      },
+    ],
+    educationList: [] as { course: string; school: string; period: string }[],
+    certificationList: [] as { name: string; issuer: string; year: string }[],
+    languageList: [
+      { name: "Portuguese", level: "Native" },
+      { name: "English", level: "B1 (intermediate)" },
     ],
     contacts: [
-      {
-        label: "LinkedIn",
-        value: "linkedin.com/in/ryansldev",
-        href: "https://linkedin.com/in/ryansldev",
-      },
-      {
-        label: "Email",
-        value: "ryanlima1309@gmail.com",
-        href: "mailto:ryanlima1309@gmail.com",
-      },
-      {
-        label: "Phone",
-        value: "(83) 98896-8267",
-        href: "tel:+5583988968267",
-      },
-      {
-        label: "Location",
-        value: "Campina Grande, Brazil",
-        href: "https://maps.google.com/?q=Campina+Grande+PB",
-      },
+      { label: "LinkedIn", ...links.linkedin },
+      { label: "GitHub", ...links.github },
+      { label: "Email", ...links.email },
+      { label: "Phone", ...links.phone },
     ],
   },
   pt: {
+    title: "Ryan Lima | Software Engineer, Front-end e Full Stack (React, Next.js, Node.js)",
     description:
-      "Desenvolvedor full stack com foco em front-end, em React, Node.js e TypeScript, com mais de 4 anos de experiência. Campina Grande, PB.",
-    role: "Full Stack, Front-end Specialist",
-    bio: "Desenvolvedor full stack com foco em front-end, em React, Node.js e TypeScript. Em mais de 4 anos, ajudei a construir e evoluir produtos usados por centenas de empresas, do desenho da solução à produção e ao monitoramento, com atenção a qualidade de código, experiência do usuário e resultado de negócio.",
+      "Software Engineer com mais de 4 anos de experiência em React, Next.js, Node.js e TypeScript. Construo um CRM com mais de 7.000 usuários ativos. Campina Grande, PB, aberto a trabalho remoto.",
+    role: "Software Engineer · Front-end e Full Stack (React, Next.js, Node.js, TypeScript)",
+    availability: "Campina Grande, PB (UTC−3) · Aberto a vagas remotas",
+    bio: "Desenvolvedor de software full stack com foco em front-end, com mais de 4 anos de experiência construindo aplicações web com React, Next.js, TypeScript, JavaScript e Node.js. Na Solarz, desenvolvo funcionalidades de um CRM com mais de 7.000 usuários ativos no setor de energia solar, incluindo o módulo de análise que a liderança usa em consultorias com clientes. Rendo melhor onde produto e engenharia se encontram: design system, testes end-to-end e entregas que movem métricas de negócio.",
     experience: "Experiência",
-    skills: "Habilidades",
+    education: "Formação",
+    projects: "Projetos",
+    certifications: "Certificações",
+    languages: "Idiomas",
     contact: "Contato",
     jobs: [
       {
-        period: "2025 – atual",
+        period: "fev. 2025 – atual",
         role: "Frontend Developer",
-        company: "Solarz",
+        company: "Solarz · CRM para integradoras de energia solar",
+        stack:
+          "Stack: React, Next.js, TypeScript, JavaScript, HTML, CSS, React Query, Zustand, Tailwind CSS, Radix UI, shadcn/ui, Storybook, React Hook Form, Zod, Recharts, Playwright, Vitest, React Testing Library, APIs REST, Git e Docker.",
         points: [
-          "Ajudei a evoluir um CRM usado por centenas de integradoras do setor solar, com foco em escala e nos fluxos críticos do produto.",
-          "Contribuí com o design system, reduzindo o tempo de desenvolvimento em 50% e o retrabalho em 80%.",
-          "Criei componentes reutilizáveis para módulos estratégicos do CRM, reduzindo cerca de 60% do código duplicado e acelerando novas entregas.",
-          "Otimizei fluxos e renderizações críticas em React, reduzindo o tempo médio de carregamento das telas em até 40%.",
-          "Fiz code reviews frequentes para manter qualidade, consistência e performance.",
-          "Escrevi e mantive testes unitários e de integração com Jest, Vitest e React Testing Library.",
+          "Reconstruí o Insights, módulo de análise de um CRM com mais de 7.000 usuários ativos e usado pelo CEO em consultorias com clientes, entregando 13 gráficos de visualização de dados (Recharts) redesenhados, com filtros, exportações e regras de permissão atrás de uma feature flag, para um rollout gradual.",
+          "Protegi os fluxos de maior valor comercial do produto escrevendo 14 das 18 suítes de testes end-to-end com Playwright (cerca de 78%), cobrindo filtros, períodos, exportações, permissões e mobile do Insights, além da gestão de campos de dados e da montagem de propostas.",
+          "Ajudei a reduzir o tempo de desenvolvimento em 50% e o retrabalho em 80%, segundo pesquisa interna com devs e designers, contribuindo com mais de 45 componentes para o Estrela UI, design system interno construído com Storybook, Tailwind CSS e Radix/shadcn.",
+          "Ajudei a otimizar a performance de telas com grande volume de dados, como o Kanban de negócios, para mais de 7.000 usuários ativos, aplicando cache com React Query, lazy loading, virtualização de listas e memoização, e tornei fluxos centrais responsivos para mobile e desktop.",
+          "Reduzi bugs e retrabalho em uma base de código compartilhada por mais de 20 contribuidores, com code review de pull requests guiado por padrões rígidos de componentes e de código.",
         ],
       },
       {
-        period: "2022 – atual",
-        role: "Software Engineer",
+        period: "abr. 2022 – atual",
+        role: "Full Stack Software Engineer",
         company: "Freelance",
+        stack:
+          "Stack: Node.js, TypeScript, Express, Fastify, APIs REST, Next.js, React, Ant Design, Oracle Database, SQL, Jest e Telegram Bot API (Telegraf).",
         points: [
-          "Desenvolvi bots de gestão de pedidos para uma empresa automotiva, com aumento de 30% na produtividade de entrega e mais capacidade operacional.",
-          "Criei um disparo de atualizações cadastrais para o RH que economizou cerca de duas semanas de trabalho em um clique.",
-          "Além dos bots, construí um sistema para liberar pedidos, cotar fornecedores e unificar esses processos, com menos atrito para treinar a equipe.",
-          "Desenvolvi uma plataforma de pedidos online para uma empresa do ramo alimentício, que aumentou a margem de lucro em 10% ao eliminar taxas de marketplaces.",
-          "Contribuí com um sistema interno de votação online, criptografado de ponta a ponta, concluído com transparência total e sem vazamento de dados.",
+          "Dei aos vendedores de ataque relatórios de clientes e indicações de produtos sob demanda, direto no chat, construindo bots no Telegram (Node.js, TypeScript, Telegraf) integrados ao banco Oracle de uma distribuidora automotiva, com estoque, últimas compras e devoluções por produto, corte de pedidos e relatórios em PDF com tabelas detalhadas.",
+          "Substituí um sistema legado lento e caro, mantido por uma empresa terceirizada, construindo uma plataforma própria (Next.js, React, Ant Design, Express, Oracle) para liberação de pedidos e cotação com fornecedores, com login único e permissões por funcionário para os sistemas internos da empresa.",
+          "Economizei cerca de duas semanas de trabalho manual do RH automatizando no Oracle as atualizações cadastrais de funcionários, antes feitas uma a uma, alimentando um relatório gerado automaticamente por outra solução interna.",
+          "Desenvolvi o front-end de um sistema seguro de votação online para um sindicato, em um time de três devs, entregando uma eleição sem vazamento de dados registrado.",
         ],
       },
     ],
-    skillGroups: [
+    projectList: [
       {
-        label: "IA e dados",
-        items:
-          "RAG, integração com LLMs (GPT-4, Claude), embeddings, document chunking, busca semântica e prompt engineering.",
+        name: "Fila Saúde",
+        links: [
+          { label: "filasaude.com.br", href: "https://filasaude.com.br" },
+          { label: "GitHub", href: "https://github.com/ryansldev/fila-saude" },
+        ],
+        summary:
+          "App open source para o paciente entrar na fila do posto de saúde pelo celular, fazer uma pré-triagem que indica UBS ou UPA e acompanhar a posição ao vivo, saindo de casa só na hora certa. No ar em produção, com 9 estrelas no GitHub.",
+        stack:
+          "TypeScript, monorepo com Turborepo, Node.js, Fastify, Drizzle ORM, PostgreSQL, Next.js, Tailwind CSS, schemas Zod compartilhados, testes de integração com Vitest e Docker.",
       },
       {
-        label: "Linguagens",
-        items:
-          "TypeScript, JavaScript, Node.js (NestJS e Express), Java, Spring Boot, React, React Native, Next.js, Prisma ORM e tRPC.",
+        name: "Kiwi",
+        links: [{ label: "GitHub", href: "https://github.com/ryansldev/kiwi" }],
+        summary:
+          "App open source de organização financeira. Monorepo em que API, web e mobile compartilham um único pacote de design tokens.",
+        stack:
+          "TypeScript, Bun, Elysia, Better Auth, Drizzle ORM, PostgreSQL, Next.js 16, React 19, Tailwind CSS 4, shadcn/ui e React Native (Expo).",
       },
-      {
-        label: "Dados",
-        items:
-          "PostgreSQL, MongoDB, Redis, Elasticsearch, Kafka, GraphQL, REST e WebSockets.",
-      },
-      {
-        label: "Cloud",
-        items:
-          "AWS (Lambda, ECS, S3, RDS, CloudWatch), Docker, Kubernetes, Terraform, CI/CD (GitHub Actions, Vercel) e observabilidade (OpenTelemetry, ELK).",
-      },
-      {
-        label: "Prática",
-        items:
-          "Jest, Vitest, React Testing Library, TDD, Agile/Scrum, microsserviços, SEO, SSR, SSG, Clean Architecture e arquitetura orientada a eventos.",
-      },
+    ],
+    educationList: [] as { course: string; school: string; period: string }[],
+    certificationList: [] as { name: string; issuer: string; year: string }[],
+    languageList: [
+      { name: "Português", level: "Nativo" },
+      { name: "Inglês", level: "B1 (intermediário)" },
     ],
     contacts: [
-      {
-        label: "LinkedIn",
-        value: "linkedin.com/in/ryansldev",
-        href: "https://linkedin.com/in/ryansldev",
-      },
-      {
-        label: "E-mail",
-        value: "ryanlima1309@gmail.com",
-        href: "mailto:ryanlima1309@gmail.com",
-      },
-      {
-        label: "Telefone",
-        value: "(83) 98896-8267",
-        href: "tel:+5583988968267",
-      },
-      {
-        label: "Cidade",
-        value: "Campina Grande, PB",
-        href: "https://maps.google.com/?q=Campina+Grande+PB",
-      },
+      { label: "LinkedIn", ...links.linkedin },
+      { label: "GitHub", ...links.github },
+      { label: "E-mail", ...links.email },
+      { label: "Telefone", ...links.phone },
     ],
   },
 } as const;

@@ -33,8 +33,9 @@ export default async function Home() {
             <h1 className="mb-2 text-[36px] leading-[1.5] font-medium text-(--content) max-md:text-[28px]">
               Ryan Lima
             </h1>
+            <p className="text-sm leading-[1.7] font-normal text-(--content)">{text.role}</p>
             <p className="mb-2 text-sm leading-[1.7] font-light text-(--content-2)">
-              {text.role}
+              {text.availability}
             </p>
             <TextLink href="https://linkedin.com/in/ryansldev" className="mb-6 max-md:mb-8">
               linkedin.com/in/ryansldev
@@ -43,75 +44,85 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="border-b border-(--line) py-10">
-          <h2 className="mb-8 text-sm leading-none font-medium text-(--content) max-md:mb-6">
-            {text.experience}
-          </h2>
-          <div>
-            {text.jobs.map((job, index) => (
-              <article
-                key={job.company}
-                className={`flex items-start justify-between max-md:flex-col max-md:gap-2 ${
-                  index === 0 ? "" : "mt-10"
-                }`}
-              >
-                <p className="text-sm leading-[1.7] font-light whitespace-nowrap text-(--content-2)">
-                  {job.period}
-                </p>
-                <div
-                  className={`w-full max-w-[600px] ${
-                    index === text.jobs.length - 1
-                      ? ""
-                      : "border-b border-(--line) pb-10"
-                  }`}
-                >
-                  <h3 className="mb-4 text-[22px] leading-[1.5] font-medium text-(--content)">
-                    {job.role}
-                  </h3>
-                  <p className="mb-2 text-sm leading-[1.7] font-light text-(--content-2)">
-                    {job.company}
-                  </p>
-                  {job.points.map((point) => (
-                    <p
-                      key={point}
-                      className="mb-2 text-sm leading-[1.7] font-light text-(--content-2) last:mb-0"
-                    >
-                      {point}
-                    </p>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="border-b border-(--line) py-10">
-          <h2 className="mb-8 text-sm leading-none font-medium text-(--content) max-md:mb-6">
-            {text.skills}
-          </h2>
-          <div>
-            {text.skillGroups.map((group, index) => (
+        <Section title={text.experience}>
+          {text.jobs.map((job, index) => (
+            <article
+              key={job.company}
+              className={`flex items-start justify-between max-md:flex-col max-md:gap-2 ${
+                index === 0 ? "" : "mt-10"
+              }`}
+            >
+              <p className="text-sm leading-[1.7] font-light whitespace-nowrap text-(--content-2)">
+                {job.period}
+              </p>
               <div
-                key={group.label}
-                className={`w-full max-w-[600px] md:ml-auto ${
-                  index === text.skillGroups.length - 1 ? "" : "pb-8"
+                className={`w-full max-w-[600px] ${
+                  index === text.jobs.length - 1 ? "" : "border-b border-(--line) pb-10"
                 }`}
               >
-                <h3 className="mb-2 text-base leading-[1.5] font-medium text-(--content)">
-                  {group.label}
+                <h3 className="mb-4 text-[22px] leading-[1.5] font-medium text-(--content)">
+                  {job.role}
                 </h3>
-                <p className="text-sm leading-[1.7] font-light text-(--content-2)">
-                  {group.items}
+                <p className="mb-2 text-sm leading-[1.7] font-light text-(--content-2)">
+                  {job.company}
+                </p>
+                {job.points.map((point) => (
+                  <p
+                    key={point}
+                    className="mb-2 text-sm leading-[1.7] font-light text-(--content-2)"
+                  >
+                    {point}
+                  </p>
+                ))}
+                <p className="mt-4 text-sm leading-[1.7] font-normal text-(--content)">
+                  {job.stack}
                 </p>
               </div>
-            ))}
-          </div>
-        </section>
+            </article>
+          ))}
+        </Section>
 
-        <section className="py-10">
-          <h2 className="mb-8 text-sm leading-none font-medium text-(--content) max-md:mb-6">
-            {text.contact}
-          </h2>
+        {text.educationList.length > 0 && (
+          <Section title={text.education}>
+            {text.educationList.map((item) => (
+              <Entry key={item.course} title={item.course} lines={[item.school, item.period]} />
+            ))}
+          </Section>
+        )}
+
+        <Section title={text.projects}>
+          {text.projectList.map((project) => (
+            <Entry key={project.name} title={project.name} lines={[project.summary, project.stack]}>
+              <div className="mb-2 flex flex-wrap gap-x-6">
+                {project.links.map((link) => (
+                  <TextLink key={link.href} href={link.href}>
+                    {link.label}
+                  </TextLink>
+                ))}
+              </div>
+            </Entry>
+          ))}
+        </Section>
+
+        {text.certificationList.length > 0 && (
+          <Section title={text.certifications}>
+            {text.certificationList.map((item) => (
+              <Entry
+                key={item.name}
+                title={item.name}
+                lines={[`${item.issuer} · ${item.year}`]}
+              />
+            ))}
+          </Section>
+        )}
+
+        <Section title={text.languages}>
+          {text.languageList.map((item) => (
+            <Entry key={item.name} title={item.name} lines={[item.level]} />
+          ))}
+        </Section>
+
+        <Section title={text.contact} last>
           <div className="w-full max-w-[600px] md:ml-auto">
             {text.contacts.map((contact) => (
               <div
@@ -125,13 +136,54 @@ export default async function Home() {
               </div>
             ))}
           </div>
-        </section>
+        </Section>
       </main>
 
       <footer className="mt-auto px-10 py-6 max-md:px-4">
         <p className="text-sm leading-[1.7] font-light text-(--content-2)">Ryan Lima</p>
       </footer>
     </>
+  );
+}
+
+function Section({
+  title,
+  last = false,
+  children,
+}: {
+  title: string;
+  last?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <section className={`py-10 ${last ? "" : "border-b border-(--line)"}`}>
+      <h2 className="mb-8 text-sm leading-none font-medium text-(--content) max-md:mb-6">
+        {title}
+      </h2>
+      <div>{children}</div>
+    </section>
+  );
+}
+
+function Entry({
+  title,
+  lines,
+  children,
+}: {
+  title: string;
+  lines: string[];
+  children?: ReactNode;
+}) {
+  return (
+    <div className="w-full max-w-[600px] pb-8 last:pb-0 md:ml-auto">
+      <h3 className="mb-1 text-base leading-[1.5] font-medium text-(--content)">{title}</h3>
+      {children}
+      {lines.map((line) => (
+        <p key={line} className="mb-2 text-sm leading-[1.7] font-light text-(--content-2) last:mb-0">
+          {line}
+        </p>
+      ))}
+    </div>
   );
 }
 
