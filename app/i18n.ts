@@ -1,30 +1,6 @@
-import { cookies, headers } from "next/headers";
+export * from "./locales";
 
-export type Locale = "en" | "pt";
-
-export async function getLocale(): Promise<Locale> {
-  const saved = (await cookies()).get("locale")?.value;
-  if (saved === "en" || saved === "pt") return saved;
-
-  const accept = (await headers()).get("accept-language") ?? "";
-  return localeFromAcceptLanguage(accept);
-}
-
-function localeFromAcceptLanguage(header: string): Locale {
-  const tags = header
-    .split(",")
-    .map((part) => part.split(";")[0]?.trim().toLowerCase())
-    .filter(Boolean);
-
-  for (const tag of tags) {
-    if (tag.startsWith("pt")) return "pt";
-    if (tag.startsWith("en")) return "en";
-  }
-
-  return "en";
-}
-
-const links = {
+export const links = {
   linkedin: {
     value: "linkedin.com/in/ryansldev",
     href: "https://linkedin.com/in/ryansldev",
@@ -45,9 +21,11 @@ const links = {
 
 export const copy = {
   en: {
-    title: "Ryan Lima | Software Engineer, Front-end & Full Stack (React, Next.js, Node.js)",
+    title: "Ryan Lima | Front-end & Full Stack Software Engineer",
     description:
-      "Software Engineer with 4+ years of experience in React, Next.js, Node.js, and TypeScript. Building a CRM used by 7,000+ active users. Based in Brazil, open to remote work.",
+      "Software Engineer with 4+ years in React, Next.js, Node.js, and TypeScript, building a CRM used by 7,000+ active users. Based in Brazil, open to remote work.",
+    jobTitle: "Software Engineer",
+    photoAlt: "Portrait of Ryan Lima",
     role: "Software Engineer · Front-end & Full Stack (React, Next.js, Node.js, TypeScript)",
     availability: "Brazil (UTC−3) · Open to remote roles",
     bio: "Front-end-focused full stack Software Engineer with 4+ years of experience building web applications with React, Next.js, TypeScript, JavaScript, and Node.js. At Solarz, I build features for a CRM used by more than 7,000 active users in the solar industry, including the analytics module that leadership uses in client consulting. I work best where product and engineering meet: design systems, end-to-end testing, and features that move business metrics.",
@@ -121,9 +99,11 @@ export const copy = {
     ],
   },
   pt: {
-    title: "Ryan Lima | Software Engineer, Front-end e Full Stack (React, Next.js, Node.js)",
+    title: "Ryan Lima | Software Engineer Front-end e Full Stack",
     description:
-      "Software Engineer com mais de 4 anos de experiência em React, Next.js, Node.js e TypeScript. Construo um CRM com mais de 7.000 usuários ativos. Campina Grande, PB, aberto a trabalho remoto.",
+      "Software Engineer com mais de 4 anos em React, Next.js, Node.js e TypeScript, construindo um CRM com mais de 7.000 usuários ativos. Aberto a trabalho remoto.",
+    jobTitle: "Software Engineer",
+    photoAlt: "Foto de Ryan Lima",
     role: "Software Engineer · Front-end e Full Stack (React, Next.js, Node.js, TypeScript)",
     availability: "Campina Grande, PB (UTC−3) · Aberto a vagas remotas",
     bio: "Desenvolvedor de software full stack com foco em front-end, com mais de 4 anos de experiência construindo aplicações web com React, Next.js, TypeScript, JavaScript e Node.js. Na Solarz, desenvolvo funcionalidades de um CRM com mais de 7.000 usuários ativos no setor de energia solar, incluindo o módulo de análise que a liderança usa em consultorias com clientes. Rendo melhor onde produto e engenharia se encontram: design system, testes end-to-end e entregas que movem métricas de negócio.",
