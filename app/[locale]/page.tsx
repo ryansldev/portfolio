@@ -98,7 +98,11 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
 
         <Section title={text.projects}>
           {text.projectList.map((project) => (
-            <Entry key={project.name} title={project.name} lines={[project.summary, project.stack]}>
+            <Entry
+              key={project.name}
+              title={project.name}
+              lines={[project.summary, ...project.points, project.stack]}
+            >
               <div className="mb-2 flex flex-wrap gap-x-6">
                 {project.links.map((link) => (
                   <TextLink key={link.href} href={link.href}>
@@ -121,6 +125,12 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
             ))}
           </Section>
         )}
+
+        <Section title={text.skills}>
+          {text.skillGroups.map((group) => (
+            <Entry key={group.label} title={group.label} lines={[group.items]} />
+          ))}
+        </Section>
 
         <Section title={text.languages}>
           {text.languageList.map((item) => (
