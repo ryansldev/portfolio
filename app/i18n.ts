@@ -22,13 +22,12 @@ export const links = {
 export const copy = {
   en: {
     title: "Ryan Lima | Full Stack Software Engineer",
-    description:
-      "Software Engineer with nearly 5 years in React, Next.js, Node.js, and TypeScript, building a CRM used by 7,000+ active users. Based in Brazil, open to remote work.",
+    description: "Full Stack Software Engineer with nearly 5 years in TypeScript, Node.js, React, and Ruby on Rails. Builds SolarZ’s WhatsApp customer service platform; founded the software house sl.dev. Brazil-based, open to remote roles.",
     jobTitle: "Software Engineer",
     photoAlt: "Portrait of Ryan Lima",
-    role: "Full Stack Software Engineer | Node.js | TypeScript | React | Next.js",
+    role: "Full Stack Software Engineer (TypeScript · Node.js · Ruby on Rails · React)",
     availability: "Brazil (UTC−3) · Open to remote roles",
-    bio: "Full Stack Software Engineer with nearly 5 years of experience building web applications with TypeScript, Node.js, React, and Next.js. At Solarz, I build features for a SaaS CRM used by more than 7,000 active users in the solar industry, including the analytics module that leadership uses in client consulting. I have also delivered platforms and RESTful APIs end to end that replaced legacy systems. I work best where product and engineering meet: design systems, automated testing, Clean Code, and features that move business metrics.",
+    bio: "Full Stack Software Engineer with nearly 5 years shipping products end to end in TypeScript, Node.js, React, and Ruby on Rails. At SolarZ, I build the WhatsApp customer service platform solar installers use to sell to and support their customers, after rebuilding the analytics module of its CRM (7,000+ active users). Before that, I founded sl.dev, a software house whose platforms and automations replaced clients’ legacy systems and manual work. I’m now founding Fila Saúde, a virtual queue for public health clinics, built with an AI-native workflow.",
     experience: "Experience",
     education: "Education",
     projects: "Projects",
@@ -38,99 +37,79 @@ export const copy = {
     contact: "Contact",
     jobs: [
       {
-        period: "Feb 2025 – Present",
-        role: "Software Engineer",
-        company: "Solarz · SaaS CRM for solar integrators · Full-time · Remote",
+        period: "Nov 2026 – Present",
+        role: "Software Engineer · Chat",
+        company: "SolarZ · WhatsApp customer service platform for solar installers · Full-time · Remote",
         stack:
-          "Stack: React, Next.js, TypeScript, JavaScript, HTML, CSS, React Query, Zustand, Tailwind CSS, Radix UI, shadcn/ui, Storybook, React Hook Form, Zod, Recharts, Playwright, Vitest, React Testing Library, REST APIs, Java, Spring Boot, Git, and Docker.",
+          "Stack: Ruby on Rails, Vue.js, NestJS, TypeScript, PostgreSQL, Sidekiq, WhatsApp APIs (Gupshup, Z-API), Docker, Kubernetes, and GCP.",
         points: [
-          "Rebuilt Insights, the analytics module of a CRM with 7,000+ active users that the CEO uses in client consulting, by shipping 13 redesigned data visualization charts (Recharts) with filters, exports, and permission rules behind a feature flag for a gradual rollout.",
-          "Protected the product’s most commercially valuable flows by writing 14 of the 18 Playwright end-to-end test suites (about 78%), covering Insights filters, periods, exports, permissions, and mobile, plus data-field management and proposal building.",
-          "Helped cut development time by 50% and rework by 80%, according to an internal survey of developers and designers, by contributing 45+ components to Estrela UI, the in-house design system built with Storybook, Tailwind CSS, and Radix/shadcn, working directly with the UX/UI team.",
-          "Helped optimize the performance of data-heavy screens such as the deals Kanban for 7,000+ active users by applying React Query caching, lazy loading, list virtualization, and memoization, and made key flows responsive across mobile and desktop.",
-          "Reduced bugs and rework across a codebase shared by 20+ contributors through code review of pull requests against strict component and code standards.",
-          "Unblocked front-end deliveries without waiting on the back-end team by making targeted changes in Java and Spring Boot, such as endpoints and API contracts.",
+          "Build SolarZ Chat, the omnichannel customer service platform that solar energy installers use to sell to and support their customers over WhatsApp.",
+          "Build features end to end across a distributed architecture: a customer service platform in Ruby on Rails and Vue, integrated with an orchestration API in NestJS and TypeScript.",
+          "Maintain and improve the WhatsApp integrations, handling inbound events through webhooks and outbound message delivery.",
+          "Turn product requirements into technical plans, defining the solution, the contracts between services, and the production impact before implementing.",
+          "Work with PostgreSQL, asynchronous queues, and deployments on GCP and Kubernetes.",
+        ],
+      },
+      {
+        period: "Feb 2025 – Nov 2026",
+        role: "Software Engineer · CRM",
+        company: "SolarZ · SaaS CRM for solar integrators · Full-time · Remote",
+        stack:
+          "Stack: React, Next.js, TypeScript, React Query, Zustand, Tailwind CSS, shadcn/ui, Storybook, Recharts, Playwright, Vitest, Java, and Spring Boot.",
+        points: [
+          "Rebuilt Insights, the analytics module the CEO uses in client consulting, shipping 13 redesigned charts with filters, exports, and permissions behind a feature flag for a gradual rollout to 7,000+ users.",
+          "Helped cut development time by 50% and rework by 80% (internal dev and design survey) by contributing 45+ components to Estrela UI, the in-house design system.",
+          "Protected the highest-value commercial flows by writing 13 Playwright E2E suites covering Insights, data fields, and proposal building.",
+          "Unblocked front-end deliveries by shipping targeted Java and Spring Boot changes to endpoints and API contracts.",
         ],
       },
       {
         period: "Apr 2022 – Feb 2025",
-        role: "Full Stack Software Engineer",
-        company: "Freelance · Remote",
+        role: "Founder",
+        company: "sl.dev · Software house for custom business software · Remote",
         stack:
-          "Stack: Node.js, TypeScript, Express, Fastify, REST APIs, Next.js, React, Ant Design, Oracle Database, SQL, Jest, and Telegram Bot API (Telegraf).",
+          "Stack: Node.js, TypeScript, Express, Fastify, Next.js, React, Oracle Database, SQL, Jest, and Telegraf.",
         points: [
-          "Gave field sales reps on-demand customer reports and product recommendations in chat by building Telegram bots (Node.js, TypeScript, Telegraf) on top of an automotive distributor’s Oracle database, with stock, recent-purchase, and return data per product, order cutting, and PDF reports with detailed tables.",
-          "Replaced a slow, costly legacy system run by a third-party vendor by building and maintaining an in-house platform for order release and supplier quotes, with RESTful APIs in Express and Oracle, single sign-on (SSO), per-employee permissions for the company’s internal tools, and a Next.js and React front end.",
-          "Saved about two weeks of manual HR work by automating, with SQL in Oracle, employee data updates that used to be done one by one, feeding a report generated automatically by another internal tool.",
-          "Built the front end of a secure online voting system for a labor union as part of a three-developer team, delivering an election with no reported data leaks.",
+          "Ran every client project end to end, from scoping the problem to building and maintaining the solution in production.",
+          "Replaced a slow, costly vendor-run legacy system by building an in-house order release and supplier quote platform (Express, Oracle, Next.js) with SSO and per-employee permissions.",
+          "Saved about two weeks of manual HR work by automating one-by-one employee data updates with SQL in Oracle.",
+          "Gave an automotive distributor’s field sales team on-demand customer reports and product recommendations through Telegram bots on its Oracle database.",
+          "Delivered a union election with no reported data leaks by building the front end of a secure online voting system in a three-developer team.",
         ],
       },
     ],
     projectList: [
       {
-        name: "Kiwi",
-        links: [{ label: "GitHub", href: "https://github.com/ryansldev/kiwi" }],
-        summary:
-          "Open-source personal finance app. A monorepo where the API, web, and mobile apps share one design-token package, with authentication via Better Auth.",
-        points: [
-          "Built end to end a cash-flow forecasting product, with a RESTful API in Bun and Elysia, a Next.js web app, and a React Native mobile app, that tells users ahead of time whether their money will be left over or run short this month.",
-          "Modeled 5 transaction types (income, expenses, credit card, savings, and daily spending) with recurrence support, plus a business rule that treats savings as a cash outflow without counting it as spending.",
-          "Created the daily forecast engine, which estimates variable spending (food, shopping, transport, health) and spreads it across the remaining days of the month to project the balance day by day.",
-          "Implemented an incentive for users to invest at least 20% of their monthly income.",
-        ],
-        stack:
-          "TypeScript, Bun, Elysia, Better Auth, Drizzle ORM, PostgreSQL, Next.js 16, React 19, Tailwind CSS 4, shadcn/ui, and React Native (Expo).",
-      },
-      {
-        name: "Fila Saúde",
+        name: "Fila Saúde · Founder & Product Engineer",
         links: [
           { label: "filasaude.com.br", href: "https://filasaude.com.br" },
           { label: "GitHub", href: "https://github.com/ryansldev/fila-saude" },
         ],
         summary:
-          "Open-source app that lets patients join a public health clinic queue from their phone, run a pre-triage that routes them to the right unit, and follow their position live, so they only leave home when it is their turn. Live in production, with 9 GitHub stars.",
-        points: [],
+          "Open-source app that lets patients join a public clinic queue from their phone, get pre-triaged to the right unit, and track their position live, so they only leave home when it’s their turn. In development since June 2026.",
+        points: [
+          "Building solo a multi-tenant platform for municipalities: a patient app (Expo), a staff panel and call station (Next.js), and a versioned public API (Fastify) with OpenAPI docs.",
+          "Work AI-native: I write the specs and architecture decisions, and coding agents (Claude Code) implement under my review, for 530+ commits in 5 months.",
+          "Modeled the queue rules in a pure domain package: priority groups, arrival deadlines, no-shows, and timed push notifications.",
+        ],
         stack:
-          "TypeScript, Turborepo monorepo, Node.js, Fastify, Drizzle ORM, PostgreSQL, Next.js, Tailwind CSS, shared Zod schemas, Vitest integration tests, and Docker.",
+          "TypeScript, Turborepo, Node.js, Fastify, Drizzle ORM, PostgreSQL, Next.js, React Native (Expo), Zod, OpenAPI, Vitest, Docker, and Claude Code.",
       },
     ],
     educationList: [] as { course: string; school: string; period: string }[],
     certificationList: [] as { name: string; issuer: string; year: string }[],
     skillGroups: [
-      {
-        label: "Back end",
-        items:
-          "Node.js, TypeScript, Express, Fastify, Elysia, Bun, Java, Spring Boot, RESTful APIs, GraphQL, tRPC, and WebSockets.",
-      },
-      {
-        label: "Front end",
-        items:
-          "React.js, Next.js, React Native (Expo), JavaScript, HTML, CSS, Tailwind CSS, UX/UI, design systems, Storybook, Radix UI, shadcn/ui, React Query, Zustand, React Hook Form, and Zod.",
-      },
-      {
-        label: "Databases",
-        items: "PostgreSQL, MongoDB, Oracle, Redis, SQL, Prisma ORM, and Drizzle ORM.",
-      },
-      {
-        label: "Infrastructure & DevOps",
-        items: "Docker, AWS, Git, and CI/CD (GitHub Actions, Vercel).",
-      },
-      {
-        label: "Architecture",
-        items:
-          "Microservices, messaging (Kafka), monorepos (Turborepo), feature flags, and Clean Architecture.",
-      },
-      {
-        label: "Testing & quality",
-        items:
-          "TDD, Playwright (E2E), Vitest, Jest, React Testing Library, Clean Code, and code review.",
-      },
-      { label: "AI", items: "LLM integration and prompt engineering." },
-      { label: "Methodologies", items: "Agile (Scrum, Kanban, and XP)." },
+      { label: "Languages", items: "TypeScript, JavaScript, Ruby, Java, and SQL." },
+      { label: "Back end", items: "Node.js, NestJS, Express, Fastify, Ruby on Rails, Spring Boot, REST APIs, GraphQL, webhooks, Sidekiq, and asynchronous queues." },
+      { label: "Front end", items: "React, Next.js, Vue.js, React Native (Expo), Tailwind CSS, design systems, Storybook, shadcn/ui, and React Query." },
+      { label: "Data", items: "PostgreSQL, Oracle, MongoDB, Redis, Prisma, and Drizzle ORM." },
+      { label: "Infrastructure", items: "Docker, Kubernetes, GCP, AWS, CI/CD (GitHub Actions), feature flags, and observability (logs, metrics, alerting)." },
+      { label: "Testing", items: "Playwright, Vitest, Jest, React Testing Library, and TDD." },
+      { label: "AI-native development", items: "Coding agents (Claude Code), spec-driven development, and AI-assisted code review." },
     ],
     languageList: [
       { name: "Portuguese", level: "Native" },
-      { name: "English", level: "Upper intermediate (B2)" },
+      { name: "English", level: "Professional working proficiency" },
     ],
     contacts: [
       { label: "LinkedIn", ...links.linkedin },
@@ -141,13 +120,12 @@ export const copy = {
   },
   pt: {
     title: "Ryan Lima | Full Stack Software Engineer",
-    description:
-      "Software Engineer com quase 5 anos em React, Next.js, Node.js e TypeScript, construindo um CRM com mais de 7.000 usuários ativos. Aberto a trabalho remoto.",
+    description: "Full Stack Software Engineer com quase 5 anos em TypeScript, Node.js, React e Ruby on Rails. Constrói a plataforma de atendimento via WhatsApp da SolarZ; fundou a software house sl.dev. Aberto a vagas remotas.",
     jobTitle: "Software Engineer",
     photoAlt: "Foto de Ryan Lima",
-    role: "Full Stack Software Engineer | Node.js | TypeScript | React | Next.js",
+    role: "Full Stack Software Engineer (TypeScript · Node.js · Ruby on Rails · React)",
     availability: "Campina Grande, PB (UTC−3) · Aberto a vagas remotas",
-    bio: "Full Stack Software Engineer com quase 5 anos de experiência construindo aplicações web com TypeScript, Node.js, React e Next.js. Na Solarz, desenvolvo funcionalidades de um CRM SaaS com mais de 7.000 usuários ativos no setor de energia solar, incluindo o módulo de análise que a liderança usa em consultorias com clientes. Também já entreguei, de ponta a ponta, plataformas e APIs RESTful que substituíram sistemas legados. Rendo melhor onde produto e engenharia se encontram: design system, testes automatizados, Clean Code e entregas que movem métricas de negócio.",
+    bio: "Full Stack Software Engineer com quase 5 anos entregando produtos de ponta a ponta com TypeScript, Node.js, React e Ruby on Rails. Na SolarZ, construo a plataforma de atendimento via WhatsApp que integradoras de energia solar usam para vender e dar suporte aos clientes, depois de reconstruir o módulo de análise do CRM da empresa (mais de 7.000 usuários ativos). Antes disso, fundei a sl.dev, uma software house cujas plataformas e automações substituíram sistemas legados e trabalho manual de clientes. Hoje estou fundando o Fila Saúde, uma fila virtual para postos de saúde, construída com um fluxo AI-native.",
     experience: "Experiência",
     education: "Formação",
     projects: "Projetos",
@@ -157,99 +135,79 @@ export const copy = {
     contact: "Contato",
     jobs: [
       {
-        period: "fev. 2025 – atual",
-        role: "Software Engineer",
-        company: "Solarz · CRM SaaS para integradoras de energia solar · Tempo integral · Remoto",
+        period: "nov. 2026 – atual",
+        role: "Software Engineer · Chat",
+        company: "SolarZ · Plataforma de atendimento via WhatsApp para integradoras solares · Tempo integral · Remoto",
         stack:
-          "Stack: React, Next.js, TypeScript, JavaScript, HTML, CSS, React Query, Zustand, Tailwind CSS, Radix UI, shadcn/ui, Storybook, React Hook Form, Zod, Recharts, Playwright, Vitest, React Testing Library, APIs REST, Java, Spring Boot, Git e Docker.",
+          "Stack: Ruby on Rails, Vue.js, NestJS, TypeScript, PostgreSQL, Sidekiq, APIs de WhatsApp (Gupshup, Z-API), Docker, Kubernetes e GCP.",
         points: [
-          "Reconstruí o Insights, módulo de análise de um CRM com mais de 7.000 usuários ativos e usado pelo CEO em consultorias com clientes, entregando 13 gráficos de visualização de dados (Recharts) redesenhados, com filtros, exportações e regras de permissão atrás de uma feature flag, para um rollout gradual.",
-          "Protegi os fluxos de maior valor comercial do produto escrevendo 14 das 18 suítes de testes end-to-end com Playwright (cerca de 78%), cobrindo filtros, períodos, exportações, permissões e mobile do Insights, além da gestão de campos de dados e da montagem de propostas.",
-          "Ajudei a reduzir o tempo de desenvolvimento em 50% e o retrabalho em 80%, segundo pesquisa interna com devs e designers, contribuindo com mais de 45 componentes para o Estrela UI, design system interno construído com Storybook, Tailwind CSS e Radix/shadcn, em colaboração direta com o time de UX/UI.",
-          "Ajudei a otimizar a performance de telas com grande volume de dados, como o Kanban de negócios, para mais de 7.000 usuários ativos, aplicando cache com React Query, lazy loading, virtualização de listas e memoização, e tornei fluxos centrais responsivos para mobile e desktop.",
-          "Reduzi bugs e retrabalho em uma base de código compartilhada por mais de 20 contribuidores, com code review de pull requests guiado por padrões rígidos de componentes e de código.",
-          "Viabilizei entregas de front-end sem depender do time de back-end fazendo ajustes pontuais em Java e Spring Boot, como endpoints e contratos de API.",
+          "Construo o SolarZ Chat, a plataforma omnichannel de atendimento que integradoras de energia solar usam para vender e dar suporte aos seus clientes pelo WhatsApp.",
+          "Desenvolvo funcionalidades de ponta a ponta em uma arquitetura distribuída: uma plataforma de atendimento em Ruby on Rails e Vue, integrada a uma API de orquestração em NestJS e TypeScript.",
+          "Mantenho e evoluo as integrações com o WhatsApp, tratando eventos de entrada via webhooks e o envio de mensagens.",
+          "Transformo requisitos de produto em planos técnicos, definindo a solução, os contratos entre serviços e o impacto em produção antes de implementar.",
+          "Trabalho com PostgreSQL, filas assíncronas e deploys em GCP e Kubernetes.",
+        ],
+      },
+      {
+        period: "fev. 2025 – nov. 2026",
+        role: "Software Engineer · CRM",
+        company: "SolarZ · CRM SaaS para integradoras de energia solar · Tempo integral · Remoto",
+        stack:
+          "Stack: React, Next.js, TypeScript, React Query, Zustand, Tailwind CSS, shadcn/ui, Storybook, Recharts, Playwright, Vitest, Java e Spring Boot.",
+        points: [
+          "Reconstruí o Insights, módulo de análise que o CEO usa em consultorias com clientes, entregando 13 gráficos redesenhados com filtros, exportações e permissões atrás de uma feature flag, para um rollout gradual a mais de 7.000 usuários.",
+          "Ajudei a reduzir o tempo de desenvolvimento em 50% e o retrabalho em 80% (pesquisa interna com devs e designers) contribuindo com mais de 45 componentes para o Estrela UI, o design system interno.",
+          "Protegi os fluxos de maior valor comercial escrevendo 13 suítes E2E com Playwright, cobrindo o Insights, campos de dados e montagem de propostas.",
+          "Destravei entregas de front-end com ajustes pontuais em Java e Spring Boot, em endpoints e contratos de API.",
         ],
       },
       {
         period: "abr. 2022 – fev. 2025",
-        role: "Full Stack Software Engineer",
-        company: "Freelance · Remoto",
+        role: "Founder",
+        company: "sl.dev · Software house de sistemas sob medida para empresas · Remoto",
         stack:
-          "Stack: Node.js, TypeScript, Express, Fastify, APIs REST, Next.js, React, Ant Design, Oracle Database, SQL, Jest e Telegram Bot API (Telegraf).",
+          "Stack: Node.js, TypeScript, Express, Fastify, Next.js, React, Oracle Database, SQL, Jest e Telegraf.",
         points: [
-          "Dei aos vendedores de ataque relatórios de clientes e indicações de produtos sob demanda, direto no chat, construindo bots no Telegram (Node.js, TypeScript, Telegraf) integrados ao banco Oracle de uma distribuidora automotiva, com estoque, últimas compras e devoluções por produto, corte de pedidos e relatórios em PDF com tabelas detalhadas.",
-          "Substituí um sistema legado lento e caro, mantido por uma empresa terceirizada, construindo e mantendo uma plataforma própria de liberação de pedidos e cotação com fornecedores, com APIs RESTful em Express e Oracle, autenticação única (SSO), permissões por funcionário para os sistemas internos da empresa e front-end em Next.js e React.",
-          "Economizei cerca de duas semanas de trabalho manual do RH automatizando via SQL/Oracle as atualizações cadastrais de funcionários, antes feitas uma a uma, alimentando um relatório gerado automaticamente por outra solução interna.",
-          "Desenvolvi o front-end de um sistema seguro de votação online para um sindicato, em um time de três devs, entregando uma eleição sem vazamento de dados registrado.",
+          "Conduzi cada projeto de cliente de ponta a ponta, do entendimento do problema à construção e manutenção da solução em produção.",
+          "Substituí um sistema legado lento e caro, mantido por terceiros, construindo uma plataforma própria de liberação de pedidos e cotação com fornecedores (Express, Oracle, Next.js), com SSO e permissões por funcionário.",
+          "Economizei cerca de duas semanas de trabalho manual do RH automatizando com SQL no Oracle atualizações cadastrais feitas uma a uma.",
+          "Dei à equipe de vendas de uma distribuidora automotiva relatórios de clientes e indicações de produtos sob demanda, com bots no Telegram sobre o banco Oracle da empresa.",
+          "Entreguei a eleição de um sindicato sem vazamento de dados registrado desenvolvendo o front-end de um sistema seguro de votação online, em um time de três devs.",
         ],
       },
     ],
     projectList: [
       {
-        name: "Kiwi",
-        links: [{ label: "GitHub", href: "https://github.com/ryansldev/kiwi" }],
-        summary:
-          "App open source de organização financeira. Monorepo em que API, web e mobile compartilham um único pacote de design tokens, com autenticação via Better Auth.",
-        points: [
-          "Desenvolvi de ponta a ponta um produto financeiro de previsibilidade de fluxo de caixa, com API RESTful em Bun e Elysia, web em Next.js e mobile em React Native, indicando com antecedência se o dinheiro do usuário vai sobrar ou faltar no mês.",
-          "Modelei 5 tipos de transação (entradas, saídas, cartão de crédito, economia e gastos diários), com suporte a recorrência, e uma regra de negócio para tratar a economia como saída do fluxo de caixa sem contá-la como gasto.",
-          "Criei o motor de “previsão de diário”, que estima os gastos variáveis (alimentação, compras, transporte, saúde) e os distribui pelos dias futuros do mês, para projetar o saldo dia a dia.",
-          "Implementei um incentivo para o usuário investir pelo menos 20% da renda mensal.",
-        ],
-        stack:
-          "TypeScript, Bun, Elysia, Better Auth, Drizzle ORM, PostgreSQL, Next.js 16, React 19, Tailwind CSS 4, shadcn/ui e React Native (Expo).",
-      },
-      {
-        name: "Fila Saúde",
+        name: "Fila Saúde · Founder & Product Engineer",
         links: [
           { label: "filasaude.com.br", href: "https://filasaude.com.br" },
           { label: "GitHub", href: "https://github.com/ryansldev/fila-saude" },
         ],
         summary:
-          "App open source para o paciente entrar na fila do posto de saúde pelo celular, fazer uma pré-triagem que indica UBS ou UPA e acompanhar a posição ao vivo, saindo de casa só na hora certa. No ar em produção, com 9 estrelas no GitHub.",
-        points: [],
+          "App open source para o paciente entrar na fila do posto de saúde pelo celular, passar por uma pré-triagem que indica a unidade certa e acompanhar a posição ao vivo, saindo de casa só na hora certa. Em desenvolvimento desde junho de 2026.",
+        points: [
+          "Construo sozinho uma plataforma multi-tenant para municípios: app do paciente (Expo), painel da equipe e estação de chamada (Next.js) e uma API pública versionada (Fastify) com documentação OpenAPI.",
+          "Trabalho de forma AI-native: escrevo as especificações e as decisões de arquitetura, e agentes de código (Claude Code) implementam sob a minha revisão, somando mais de 530 commits em 5 meses.",
+          "Modelei as regras da fila em um pacote de domínio puro: grupos prioritários, prazos de chegada, faltas e notificações push com hora marcada.",
+        ],
         stack:
-          "TypeScript, monorepo com Turborepo, Node.js, Fastify, Drizzle ORM, PostgreSQL, Next.js, Tailwind CSS, schemas Zod compartilhados, testes de integração com Vitest e Docker.",
+          "TypeScript, Turborepo, Node.js, Fastify, Drizzle ORM, PostgreSQL, Next.js, React Native (Expo), Zod, OpenAPI, Vitest, Docker e Claude Code.",
       },
     ],
     educationList: [] as { course: string; school: string; period: string }[],
     certificationList: [] as { name: string; issuer: string; year: string }[],
     skillGroups: [
-      {
-        label: "Back-end",
-        items:
-          "Node.js, TypeScript, Express, Fastify, Elysia, Bun, Java, Spring Boot, APIs RESTful, GraphQL, tRPC e WebSockets.",
-      },
-      {
-        label: "Front-end",
-        items:
-          "React.js, Next.js, React Native (Expo), JavaScript, HTML, CSS, Tailwind CSS, UX/UI, Design Systems, Storybook, Radix UI, shadcn/ui, React Query, Zustand, React Hook Form e Zod.",
-      },
-      {
-        label: "Banco de dados",
-        items: "PostgreSQL, MongoDB, Oracle, Redis, SQL, Prisma ORM e Drizzle ORM.",
-      },
-      {
-        label: "Infraestrutura e DevOps",
-        items: "Docker, AWS, Git e CI/CD (GitHub Actions, Vercel).",
-      },
-      {
-        label: "Arquitetura",
-        items:
-          "Microsserviços, mensageria (Kafka), monorepo (Turborepo), feature flags e Clean Architecture.",
-      },
-      {
-        label: "Testes e qualidade",
-        items:
-          "TDD, Playwright (E2E), Vitest, Jest, React Testing Library, Clean Code e code review.",
-      },
-      { label: "IA", items: "Integração com LLMs e prompt engineering." },
-      { label: "Metodologias", items: "Metodologias ágeis (Scrum, Kanban e XP)." },
+      { label: "Linguagens", items: "TypeScript, JavaScript, Ruby, Java e SQL." },
+      { label: "Back-end", items: "Node.js, NestJS, Express, Fastify, Ruby on Rails, Spring Boot, APIs REST, GraphQL, webhooks, Sidekiq e filas assíncronas." },
+      { label: "Front-end", items: "React, Next.js, Vue.js, React Native (Expo), Tailwind CSS, design systems, Storybook, shadcn/ui e React Query." },
+      { label: "Dados", items: "PostgreSQL, Oracle, MongoDB, Redis, Prisma e Drizzle ORM." },
+      { label: "Infraestrutura", items: "Docker, Kubernetes, GCP, AWS, CI/CD (GitHub Actions), feature flags e observabilidade (logs, métricas, alertas)." },
+      { label: "Testes", items: "Playwright, Vitest, Jest, React Testing Library e TDD." },
+      { label: "Desenvolvimento AI-native", items: "Agentes de código (Claude Code), desenvolvimento guiado por especificação e code review assistido por IA." },
     ],
     languageList: [
       { name: "Português", level: "Nativo" },
-      { name: "Inglês", level: "Intermediário (B2)" },
+      { name: "Inglês", level: "Proficiência profissional" },
     ],
     contacts: [
       { label: "LinkedIn", ...links.linkedin },
