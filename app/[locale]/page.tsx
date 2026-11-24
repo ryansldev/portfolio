@@ -43,9 +43,10 @@ export default async function Home({ params }: PageProps<"/[locale]">) {
             <p className="mb-2 text-sm leading-[1.7] font-light text-(--content-2)">
               {text.availability}
             </p>
-            <TextLink href="https://linkedin.com/in/ryansldev" className="mb-6 max-md:mb-8">
-              linkedin.com/in/ryansldev
-            </TextLink>
+            <div className="mb-6 flex flex-wrap gap-x-6 max-md:mb-8">
+              <TextLink href="https://linkedin.com/in/ryansldev">linkedin.com/in/ryansldev</TextLink>
+              <TextLink href={`/${locale}/resume.pdf`}>{text.resume.download}</TextLink>
+            </div>
             <p className="text-sm leading-[1.7] font-light text-(--content-2)">{text.bio}</p>
           </div>
         </section>
