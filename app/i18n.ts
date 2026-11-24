@@ -35,6 +35,13 @@ export const copy = {
     skills: "Technical skills",
     languages: "Languages",
     contact: "Contact",
+    resume: {
+      title: "Resume",
+      summary: "Summary",
+      stack: "Stack",
+      download: "Download resume (PDF)",
+      fileName: "Ryan-Lima-Resume.pdf",
+    },
     jobs: [
       {
         period: "Nov 2026 – Present",
@@ -133,6 +140,13 @@ export const copy = {
     skills: "Habilidades técnicas",
     languages: "Idiomas",
     contact: "Contato",
+    resume: {
+      title: "Currículo",
+      summary: "Resumo",
+      stack: "Stack",
+      download: "Baixar currículo (PDF)",
+      fileName: "Ryan-Lima-Curriculo.pdf",
+    },
     jobs: [
       {
         period: "nov. 2026 – atual",
