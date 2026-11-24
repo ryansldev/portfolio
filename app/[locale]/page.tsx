@@ -185,7 +185,7 @@ function profileJsonLd(locale: Locale) {
       url: siteUrl,
       email: links.email.href,
       sameAs: [links.linkedin.href, links.github.href],
-      worksFor: { "@type": "Organization", name: "Solarz" },
+      worksFor: { "@type": "Organization", name: "SolarZ" },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Campina Grande",
@@ -193,7 +193,7 @@ function profileJsonLd(locale: Locale) {
         addressCountry: "BR",
       },
       knowsLanguage: ["pt-BR", "en"],
-      knowsAbout: ["React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Front-end", "Full Stack"],
+      knowsAbout: ["TypeScript", "Node.js", "NestJS", "Ruby on Rails", "Vue.js", "React", "Next.js", "PostgreSQL", "Full Stack"],
     },
   };
 }
