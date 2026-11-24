@@ -58,7 +58,7 @@ export const copy = {
         ],
       },
       {
-        period: "Feb 2025 – Nov 2026",
+        period: "Feb 2025 – Oct 2026",
         role: "Software Engineer · CRM",
         company: "SolarZ · SaaS CRM for solar integrators · Full-time · Remote",
         stack:
@@ -116,7 +116,7 @@ export const copy = {
     ],
     languageList: [
       { name: "Portuguese", level: "Native" },
-      { name: "English", level: "Professional working proficiency" },
+      { name: "English", level: "B2 (professional working proficiency)" },
     ],
     contacts: [
       { label: "LinkedIn", ...links.linkedin },
@@ -163,7 +163,7 @@ export const copy = {
         ],
       },
       {
-        period: "fev. 2025 – nov. 2026",
+        period: "fev. 2025 – out. 2026",
         role: "Software Engineer · CRM",
         company: "SolarZ · CRM SaaS para integradoras de energia solar · Tempo integral · Remoto",
         stack:
@@ -221,7 +221,7 @@ export const copy = {
     ],
     languageList: [
       { name: "Português", level: "Nativo" },
-      { name: "Inglês", level: "Proficiência profissional" },
+      { name: "Inglês", level: "B2 (proficiência profissional)" },
     ],
     contacts: [
       { label: "LinkedIn", ...links.linkedin },
